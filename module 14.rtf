@@ -1,0 +1,169 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset2 Wingdings;}{\f2\fnil Calibri;}}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs32\lang9 Module: 14  Identity with Windows Server \par
+Active directory domain services \par
+1. what is domain controller? \par
+The primary function of domain controllers is to authenticate and validate users on a network, including group policies, user credentials, and computer names to determine and validate user access.\par
+2. describe forest, domain, tree, schema, OU, container, site, subnet,  \par
+Domains can be organized into trees with trust relationships, and trees can form larger forests. Organizational units (OUs) are the smallest unit within Active Directory and allow admins to define specific group policy settings and delegated admin rights. OUs can contain users, computers, groups, and other OUs\par
+3. partition, trust relationship \par
+The prototypical partition is that between unmarried partners or business partners. Both own equal shares, but only one wants to end the relationship and take their money out. Partitions enable this to happen, usually ending with a court-ordered sale of the subject property.\par
+4. what is active directory? \par
+ a database and set of services that connect users with the network resources they need to get their work done\par
+5. what is global catalog server?  \par
+ a feature of Active Directory (AD) that allows a domain controller (DC) to provide information on any object in the forest, regardless of whether the object is a member of its domain\par
+6. what is ADC AND RODC? \par
+physical locations that don't have adequate security to host a Domain Controller but still require directory services for resources in those locations.\par
+7. what is operation master role? \par
+Schema, Domain Naming, Primary Domain Controller (PDC) emulator, Relative Identifier (RID), and Infrastructure\par
+8. type of operation master role and describe all role. \par
+Operations master role holders are assigned automatically when the first domain controller in a given domain is created. The two forest-level roles (schema master and domain naming master) are assigned to the first domain controller created in a forest.\par
+9. difference between transferring and seizing role  \par
+ in Scenario-1, we still have connectivity between DC-01 and DC-02 whereas in Scenario-2, we don't have any connectivity between DC-01 and DC-02. This is the exact difference between transferring and seizing the role.\par
+10. password    policy \par
+A password policy sets the rules that passwords for a service must meet, such as length and type of characters allowed and disallowed.\par
+11. what id profile and type of profile? \par
+A profile-type defines a set of properties, also referred to as a schema, that are inherent to all profiles of that type. This set of properties is used internally to group objects and enforce overall system constraints. Examples of common profile-types are customer , employee , and contractor \par
+12. group nesting and scope, type of group \par
+Group nesting describes when one group is a member of other groups. The Microsoft Active Directory group scopes are: Domain local group: Windows usage: Members of this group can come from any domain, but can access Windows resources only in the local domain.\par
+\f1\'b7\f0  Practical \par
+1. install ADDS and create a new forest  \par
+yes\par
+2. give membership of pc to domain \par
+yes\par
+3. create a ADC\par
+yes \par
+4. create RODC and password replication \par
+yes \par
+5. create a new site\par
+yes \par
+6. create a new child domain\par
+yes  \par
+7. create a new tree \par
+yes\par
+8. create a new user with GUI and CLI\par
+yes  \par
+9. create roaming profile \par
+yes\par
+10. create OU and give delegation\par
+yes  \par
+11. create a group\par
+yes \par
+12. transfer roles\f2\emdash PDC, RID , schema master ,  \par
+\f0\lang1033 yes\f2\lang9\par
+13. Doamin name master\emdash\par
+\f0\lang1033 yes\f2\lang9  \par
+14. GUI and ntdsutil \par
+\f0\lang1033 yes\f2\lang9\par
+15.  IFM \par
+integrated facilities management \par
+Advance feature \par
+1. describe account policy \par
+The prototypical partition is that between unmarried partners or business partners. Both own equal shares, but only one wants to end the relationship and take their money out. Partitions enable this to happen, usually ending with a court-ordered sale of the subject property.\par
+2. describe account lockout policy  \par
+The Account lockout threshold policy setting determines the number of failed sign-in attempts that will cause a user account to be locked. A locked account can't be used until you reset it or until the number of minutes specified by the Account lockout duration policy setting expires\par
+3. what is trust relationship \par
+A logical connection that is established between directory domains so that the rights and privileges of users and devices in one domain is shared with the other. For example, it allows users to log in once and have access to all associated resources without having to be authenticated again\par
+4. type of trust relationship describe all trust  \par
+Transitivity determines whether a trust can be extended outside of the two domains with which it was formed. A transitive trust can be used to extend trust relationships with other domains. A non-transitive trust can be used to deny trust relationships with other domains\par
+5. what is site and subnet ? \par
+Subnets are associated with a range of IP addresses and are linked to a site. They identify and define the available IP addresses for a particular AD site. A site can be considered the collection of these well-connected and fast subnets\par
+\f1\'b7\f0  Practical \par
+1. manage active directory offline \par
+yes\par
+2. restore object of active directory from AD Recycle bin  \par
+yes\par
+3. backup active directory \par
+yes\par
+4. manage active directory replication---repadmin  DcDiag  \par
+yes\par
+5. create multiplae UPN suffix multidomain enviourment  \par
+yes\par
+6. configure trust between forest check with login \par
+yes\par
+7. configure ADDS sites and subnet \par
+yes\par
+Group Policy \par
+1. what is group policy? \par
+Group Policy is a hierarchical infrastructure that allows a network administrator in charge of Microsoft's Active Directory to implement specific configurations for users and computers. Group Policy is primarily a security tool, and can be used to apply security settings to users and computers.\par
+2. what is default policy? Default Domain and domain controller \par
+Default Domain Policy: A default GPO that is automatically created and linked to the domain whenever a server is promoted to a domain controller. It has the highest precedence of all GPOs linked to the domain, and it applies to all users and computers in the domain\par
+3. what is user configuration and computer configuration \par
+Computer configurations are applied to computers. User configurations are applied to users. 5. We should make separate GPO rules for computers and users.\par
+4. what is GPO? \par
+Microsoft's Group Policy Object (GPO) is a collection of Group Policy settings that defines what a system will look like and how it will behave for a defined group of users.\par
+5. define software setting, windows setting, and administrative templates \par
+Administrative Templates are used to regulate access to the Control Panel, system settings, and network resources.\par
+6. link GPO \par
+Linking GPOs to Active Directory containers enables an administrator to implement Group Policy settings for a broad or narrow portion of the organization, as required. The following list contains example applications of policy: A GPO linked to a site applies to all users and computers in the site.\par
+7. delegation GPO management  \par
+Navigate to Management tab > GPO Management > Manage GPOs. Select the domain to which the GPO belongs. From the list of GPOs in the selected domain, click on Linked Objects button next to the GPO to be modified. Navigate to the Delegation tab\par
+8. inheritance policy \par
+Inheritance laws, also known as succession laws in India, revolve around ancestral properties and their passing on to the owner's descendants. Read all about inheritance laws in India, their functioning, and their inclusions and exclusions\par
+9. script, templates \par
+Script templates are entire scripts that have been packaged for reuse.\par
+\f1\'b7\f0  Practical \par
+1. backup restore import and copy GPO  \par
+yes\par
+2. force group policy command \par
+yes\par
+3. check group policy settings  \par
+yes\par
+4. configure folder redirection \par
+yes\par
+5. software installation ---assign and publish  \par
+yes\par
+6. drive map through policy \par
+yes\par
+Certification services \par
+1. purpose of certification \par
+A web server certificate, often known as an SSL/TLS certificate, verifies the validity of a website. A secure sockets layer (SSL) certificate on a server converts the HTTP security protocol to HTTPS.\par
+2. certificate service and its role service \f2\endash certificate authority, certificate enrolment policy \par
+An enrollment letter is an official document that highlights the status of admission of students to a university. It confirms the admission of a student into a programme. Students wait for the confirmation of admission once the application form has been submitted successfully.\par
+web service \par
+3. standalone v/s enterprise CA  \par
+At the most basic level, the basic different between a standalone CA and an Enterprise CA is that an Enterprise CA needs to be a member of the domain while a standalone CA does not. If you decide to, you can install a standalone CA on a server that is a member of the domain\par
+4. root CA and subordinate CA \par
+A CA certified by another is called a subordinate CA. A CA that is not certified by any other, but relies solely on its own reputation, is called a root CA.\par
+5. describe certificate templates and how to use it \par
+Certificate templates also give instructions to the client on how to create and submit a valid certificate request. Only an enterprise CA can issue certificates based on a certificate template. The templates are stored in Active Directory Domain Services (AD DS) for use by every CA in the forest.\par
+\f1\'b7\f0  Practical \par
+1. install certiface services ---certifacte authority and web enrolment \par
+yes\par
+2. issue certificate through web enrolment and make secure web site \par
+yes\par
+3. self-signed certificate \par
+yes\par
+4. mange certificate---using template and issue certificate for computer \par
+yes\par
+5. backup CA \par
+yes\par
+ADFS \par
+1. what is federation services  \par
+Active Directory Federation Services (AD FS) is a feature of the Windows Server operating system that extends end users' single sign-on (SSO) access to applications and systems outside the corporate firewall.\par
+2. ADFS service component  \par
+Active Directory Federation Service (ADFS) is a software component created by Microsoft to provide Windows Server operating systems Single Sign-On to users.. It is a feature that allows sharing of identity information outside a company's network\par
+3. ADFS requirement \par
+In order to configure ADFS for Workplace you need to meet the following prerequisites:\par
+Your SSO system uses Windows Server version 2019 or 2016, Active Directory Domain Services (ADDS), and Active Directory Federation Services (ADFS) v4 or v5.\par
+You have been assigned System Admin role in your Workplace instance\par
+4. multifactor authentication  \par
+Multi-factor authentication (MFA) is a multi-step account login process that requires users to enter more information than just a password. For example, along with the password, users might be asked to enter a code sent to their email, answer a secret question, or scan a fingerprint.\par
+5. web application proxy  \par
+\f1\'b7\f0  Practical \par
+1. Install ADFS service and configure between two trusted  \par
+organizations (relay party trust) \par
+yes\par
+2. multifactor authentication \par
+yes\par
+ADRMS \par
+1. what is ADRMS \par
+The information that is to be protected is encrypted by AD RMS and stored in the AD RMS server. A user will be able to read or access the encrypted file only if he/she possesses the encryption key to decrypt this information\par
+2. how to secure data and type of security \par
+Data security is the process of safeguarding digital information throughout its entire life cycle to protect it from corruption, theft, or unauthorized access. It covers everything\f2\emdash hardware, software, storage devices, and user devices; access and administrative controls; and organizations' policies and procedures.\f0\par
+3 what is service account \par
+\f1\'b7\f0  Practical \par
+1. install ADRMS and secure data (different security apply)\par
+yes\par
+}
+ 
